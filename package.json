@@ -4,6 +4,25 @@
 	"homepage": "https://wthrblx.github.io/",
 	"private": true,
 	"type": "module",
+	"prettier": {
+		"useTabs": true,
+		"singleQuote": true,
+		"trailingComma": "all",
+		"printWidth": 120,
+		"plugins": [
+			"prettier-plugin-svelte",
+			"prettier-plugin-tailwindcss"
+		],
+		"overrides": [
+			{
+				"files": "*.svelte",
+				"options": {
+					"parser": "svelte"
+				}
+			}
+		],
+		"tailwindStylesheet": "./src/routes/layout.css"
+	},
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
@@ -47,7 +66,6 @@
 		"vite-plugin-devtools-json": "^1.0.0"
 	},
 	"dependencies": {
-		"@fontsource-variable/inter": "^5.2.8",
-		"@fontsource-variable/merriweather": "^5.2.6"
+		"@fontsource/titillium-web": "^5.2.8"
 	}
 }

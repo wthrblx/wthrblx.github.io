@@ -13,7 +13,7 @@
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
   --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
+  --primary-foreground: var(--color-orange-200);
   --secondary: oklch(0.97 0 0);
   --secondary-foreground: oklch(0.205 0 0);
   --muted: oklch(0.97 0 0);
@@ -38,7 +38,7 @@
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
 }
-
+/* 
 .dark {
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
@@ -71,14 +71,14 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
-}
+} */
 
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
-  --color-background: var(--background);
+  --color-background: var(--color-wth-ash-dark);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
@@ -86,6 +86,7 @@
   --color-popover-foreground: var(--popover-foreground);
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
+  --color-heading: white;
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
   --color-muted: var(--muted);
@@ -112,20 +113,25 @@
 }
 
 @theme {
-  --font-sans: 'Inter Variable', sans-serif;
-  --font-serif: 'Merriweather Variable', serif;
+  --font-sans: 'Titillium Web', sans-serif;
+  --color-wth-ash-dark: #220709;
+  --color-wth-ash: #44141F;
+  --color-wth-crimson: #BB0000;
+  --color-wth-lava: #E95E1C;
+  --color-wth-gold: #FBB626;
+  --color-wth-gold-light: #FEF559;
 }
 
 @layer base {
   * {
-    @apply border-border outline-ring/50  font-serif;
+    @apply border-border outline-ring/50;
   }
 
   h1, h2, h3, h4, h5, h6, .heading {
-    @apply text-orange-200 uppercase font-bold;
+    @apply uppercase font-bold text-orange-50;
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-primary-foreground font-sans text-xl;
   }
 }
